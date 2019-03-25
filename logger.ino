@@ -8,24 +8,6 @@
 #define dht_apin A1
 const int chipSelect = 4;
 
-String HOST = "api.thingspeak.com";
-String PORT = "80";
-char AP[] = "project";
-String PASS = "project101";
-
-
-String API_v = "X0D8IS384RPRFPLH";
-String API_c = "LL7RAIDAIJK7IQ1G";
-
-String field1v = "field1";
-String field2v = "field2";
-String field1c = "field1";
-String field2c = "field2";
-String field7c = "field7";
-
-
-
-
 int countTrueCommand;
 int countTimeCommand;
 boolean found = false;
@@ -94,43 +76,31 @@ void setup() {
     datafile2.close();
   }
 
-
-
-
-
-
 } ///
 
 void loop() {
-
-
 
   get_uv(uvIntensity);
   rawvalue(current , current2 , vol , vol2);
   File datafile = SD.open("datalog2.txt", FILE_WRITE);
 
-
-
-
   if (datafile) {
 
 
-        datafile.print(uvIntensity, 3);
+     datafile.print(uvIntensity, 3);
     datafile.print("\t");
     datafile.print("\t");
     
     datafile.print(current, 3);
     datafile.print("\t");
-      datafile.print("\t");
-      datafile.print("\t");
+    datafile.print("\t");
+    datafile.print("\t");
     
-    
-    ///dataFile.close();
 
     datafile.print(current2, 3);
     datafile.print("\t");
     datafile.print("\t");
-     datafile.print("\t");
+    datafile.print("\t");
 
      
 
